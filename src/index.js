@@ -6,11 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 ReactDOM.render(
-    <Router>
-        <AppRoutes />
-    </Router>,
+    <Provider store={store}>
+        <Router>
+            <AppRoutes />
+        </Router>
+    </Provider>,
     document.getElementById('root')
 );
 
