@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Sidebar extends Component {
+class Article extends Component {
     render() {
         return (
             <div>
-                Holas Sidebar
+                Holas este es el primer articulo
             </div>
         )
     }
 }
 
-export default Sidebar;
+export default Article;

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Sidebar extends Component {
+class Users extends Component {
     render() {
         return (
             <div>
-                Holas Sidebar
+                Esta es una clase
             </div>
         )
     }
 }
 
-export default Sidebar;
+export default Users;
