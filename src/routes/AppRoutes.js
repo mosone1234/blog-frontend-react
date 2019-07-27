@@ -6,13 +6,17 @@ import App from '../App';
 import Home from '../components/user/home/Home';
 import UserContent from '../components/user/user-content/UserContent';
 import Dashborad from '../components/user/dashboard/Dashborad';
+import Users from '../components/admin/user/Users';
+import Article from '../components/admin/article/Article';
 
 const AppRoutes = () => 
     <App>
         <Switch>
+            <Route exact path="/" component={Home}/>
             <Route exact path="/userContent" component={UserContent} />
             <Route exact path="/dashboard" component={Dashborad} />
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/admin/users" component={Users} />
+            <Route exact path="/admin/articles" component={Article} />
         </Switch>
     </App>;
 

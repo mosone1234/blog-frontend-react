@@ -11,4 +11,12 @@ export default [
         title: 'Information',
         url: '/information'
     },
+    {
+        title: 'Article',
+        url: '/article'
+    },
+    {
+        title: 'users',
+        url: '.users'
+    }
 ];
