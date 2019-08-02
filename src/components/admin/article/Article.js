@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
-import API from '../../../server/api';
+import { articleAction } from '../../../redux/_actions/article.actions';
+import { connect } from 'react-redux';
 
 class Article extends Component {
-    // constructor(props) {
-        state = {
-            articles: [],
-        };
-    // }
 
-    showAllAticles() {
-        API.get(`/articles`).then((res) => {
-            console.log(res);
-            console.log(res.data);
-            const articles = res.data;
-            this.setState({ articles });
-        });
-    }
-
-    AddedArticle() {
-        API.post(`/articles`, { })
+    componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(articleAction.getArticles());
     }
 
     render() {
+        const { articles } = this.props.articles;
         return (
             <div className="container">
                 <table className="table">
@@ -34,13 +23,15 @@ class Article extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.articles.map(article =>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>{article.title}</td>
-                                    <td>{article.description}</td>
-                                </tr>
-                            )
+                            articles.map((article) => {
+                                return (
+                                    <tr key={article.id}>
+                                        <th scope="row">1</th>
+                                        <td>{article.title}</td>
+                                        <td>{article.description}</td>
+                                    </tr>
+                                )
+                            })
                         }
                     </tbody>
                 </table>
@@ -49,4 +40,10 @@ class Article extends Component {
     }
 }
 
-export default Article;
+const mapStateToProps = (state) => {
+    return {
+        articles: state.articles
+    };
+}
+
+export default connect(mapStateToProps)(Article);

@@ -9,6 +9,7 @@ import AppRoutes from './routes/AppRoutes';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+
 ReactDOM.render(
     <Provider store={store}>
         <Router>

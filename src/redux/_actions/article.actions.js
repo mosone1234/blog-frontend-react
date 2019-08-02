@@ -1,23 +1,26 @@
 import { FETCH_ARTICLES } from './types';
-import { userService } from '../_services';
+import { articleService } from '../_services';
 
 export const articleAction = {
     getArticles
 }
 
-getArticles = () => {
-    return (dispatch) => {
-        userService.getAll().then((res) => {
-            console.log(res);
-            dispatch(articlesList(res.data));
-        }).catch((err) => {
+function getArticles() {
+    return async (dispatch) => {
+        try {
+            const response = await articleService.getAll();
+            console.log(response.data);
+            dispatch(articlesList(Array.from(response.data.articles.rows)));
+        }
+        catch (err) {
             console.log('Error');
             console.log(err);
-        });
+            throw (err);
+        }
     }
 }
 
-articlesList = (articles) => {
+function articlesList(articles) {
     return {
         type: FETCH_ARTICLES,
         articles
