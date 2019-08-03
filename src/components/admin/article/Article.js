@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { articleAction } from '../../../redux/_actions/article.actions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class Article extends Component {
 
@@ -46,4 +47,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps)(Article);
+export default withRouter(connect(mapStateToProps)(Article));

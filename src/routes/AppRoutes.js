@@ -9,10 +9,10 @@ import Dashborad from '../components/user/dashboard/Dashborad';
 import Users from '../components/admin/user/Users';
 import Article from '../components/admin/article/Article';
 
-const AppRoutes = () => 
+const AppRoutes = () =>
     <App>
         <Switch>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={Home} />
             <Route exact path="/userContent" component={UserContent} />
             <Route exact path="/dashboard" component={Dashborad} />
             <Route exact path="/admin/users" component={Users} />
