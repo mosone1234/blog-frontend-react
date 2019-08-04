@@ -8,17 +8,22 @@ class Sidebar extends Component {
             <div>
                 <div className="bg-light border-light" id="sidebar-wrapper">
                     <div className="sidebar-heading">
-                        Start Boostrap
+                        <div className="justify-content-center d-flex">
+                            Start Boostrap
+                        </div>
                     </div>
                     <div className="list-group list-group-flush">
                         <span className="list-group-item list-group-item-action bg-light">
-                            <Link to="/admin/users"></Link>
-                            Users
+                            <Link to="/admin/users">
+                                Users
+                            </Link>
                         </span>
                         <span className="list-group-item list-group-item-action bg-light">
                             <Link to="/admin/articles">
                                 Articles
                             </Link>
+                        </span>
+                        <span className="list-group-item list-group-item-action bg-light">
                         </span>
                     </div>
                 </div>
