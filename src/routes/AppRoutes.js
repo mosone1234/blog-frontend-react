@@ -8,6 +8,7 @@ import UserContent from '../components/user/user-content/UserContent';
 import Dashborad from '../components/user/dashboard/Dashborad';
 import Users from '../components/admin/user/Users';
 import Article from '../components/admin/article/Article';
+import NewArticle from '../redux/_containers/_article/newArticle'
 
 const AppRoutes = () =>
     <App>
@@ -17,6 +18,7 @@ const AppRoutes = () =>
             <Route exact path="/dashboard" component={Dashborad} />
             <Route exact path="/admin/users" component={Users} />
             <Route exact path="/admin/articles" component={Article} />
+            <Route exact path="/admin/article/:id" component={NewArticle} />
         </Switch>
     </App>;
 

@@ -14,7 +14,7 @@ class Navbar extends Component {
                         <li className="nav-item active">
                             <div className="nav-link">
                                 <Link to="/">home</Link>
-                            <span className="sr-only">(current)</span></div>
+                                <span className="sr-only">(current)</span></div>
                         </li>
                         <li className="nav-item">
                             <div className="nav-link">
@@ -23,7 +23,7 @@ class Navbar extends Component {
                         </li>
                         <li className="nav-item dropdown">
                             <div className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               <span>Dropdown</span>
+                                <span>Dropdown</span>
                             </div>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <span className="dropdown-item">Action</span>
@@ -42,7 +42,7 @@ class Navbar extends Component {
                     </form>
                 </div>
             </nav>
-        )
+        );
     }
 }
 

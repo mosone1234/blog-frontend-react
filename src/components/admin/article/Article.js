@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { articleAction } from '../../../redux/_actions/article.actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import NewArticle from '../../../redux/_containers/_article/newArticle';
 
 class Article extends Component {
 
@@ -14,6 +15,9 @@ class Article extends Component {
         const { articles } = this.props.articles;
         return (
             <div className="container">
+                <div>
+                    <NewArticle></NewArticle>
+                </div>
                 <table className="table">
                     <thead>
                         <tr>
