@@ -1,11 +1,12 @@
-import { FETCH_ARTICLES, ADD_ARTICLES, GET_ARTICLE, DELETE_ARTICLES } from '../_actions/types';
+import { FETCH_ARTICLES, ADD_ARTICLES, GET_ARTICLE, DELETE_ARTICLES, CHANGE_VALUE, UPDATE_ARTICLE } from '../_actions/types';
 // import {actions} from '../_actions';
 
 const initialState = {
     articles: [],
-    id: '',
+    id: null,
     title: '',
-    description: ''
+    description: '',
+    userId: null,
 };
 
 export default function articleReducer(state = initialState, action) {
@@ -16,18 +17,25 @@ export default function articleReducer(state = initialState, action) {
                 articles: action.articles
             };
         case GET_ARTICLE:
-            // console.log('-------------------->>>>>sdsd>>>>>>>esta es la accion wey ', action);
-            // console.log('---este es el estado -->-------_>>>>>>>>>>>>>>>>>>>> ', state);
             return {
                 ...state,
                 id: action.id,
                 title: action.title,
-                description: action.description
+                description: action.description,
+                userId: action.userId
             };
         case ADD_ARTICLES:
+            console.log('--- Esto para Adicionar --> ', action);
+            return state;
+        case UPDATE_ARTICLE:
             return state;
         case DELETE_ARTICLES:
             return state;
+        case CHANGE_VALUE:
+            return {
+                ...state,
+                [action.props]: action.value
+            };
         default:
             return state
     }

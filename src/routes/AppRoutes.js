@@ -18,7 +18,8 @@ const AppRoutes = () =>
             <Route exact path="/dashboard" component={Dashborad} />
             <Route exact path="/admin/users" component={Users} />
             <Route exact path="/admin/articles" component={Article} />
-            <Route exact path="/admin/article/:id" component={NewArticle} />
+            <Route exact path="/admin/add-article" component={NewArticle} />
+            <Route exact path="/admin/edit-article/:id" component={NewArticle} />
         </Switch>
     </App>;
 

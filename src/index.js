@@ -4,15 +4,16 @@ import './index.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { history } from './_helpers';
 
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router>
+        <Router history={history}>
             <AppRoutes />
         </Router>
     </Provider>,
